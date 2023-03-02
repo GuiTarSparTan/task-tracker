@@ -1,3 +1,5 @@
+Task Tracker app developed using guidance of Traversy Media, React crash course: https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=1894s
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
