@@ -1,9 +1,15 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
+import Button from './Button'
 
 const Header = ({ tittle }) => {
+  const onClick = () => {
+    console.log('Click')
+  }
+
   return (
-    <header>
+    <header className='header'>
         <h1>{tittle}</h1>
+        <Button color='steelblue' text='Add' onClick={onClick} />
     </header>
   )
 }
@@ -13,7 +19,7 @@ Header.defaultProps = {
 }
 
 Header.propTypes = {
-    tittle: propTypes.string.isRequired,
+    tittle: PropTypes.string.isRequired,
 }
 
 // CSS styling in JS
