@@ -8,18 +8,18 @@ const Header = ({ tittle }) => {
 
   return (
     <header className='header'>
-        <h1>{tittle}</h1>
-        <Button color='steelblue' text='Add' onClick={onClick} />
+      <h1>{tittle}</h1>
+      <Button color='steelblue' text='Add' onClick={onClick} />
     </header>
   )
 }
 
 Header.defaultProps = {
-    tittle: 'Task Tracker',
+  tittle: 'Task Tracker',
 }
 
 Header.propTypes = {
-    tittle: PropTypes.string.isRequired,
+  tittle: PropTypes.string.isRequired,
 }
 
 // CSS styling in JS
