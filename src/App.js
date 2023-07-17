@@ -1,9 +1,10 @@
 // import React from "react"; --> class based component import
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import { useState, useEffect } from 'react';
-import { wait } from '@testing-library/user-event/dist/utils';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // class based component
 // class App extends React.Component {
@@ -100,18 +101,21 @@ const App = () => {
 
   //Load app UI
   return (
-    <div className="container">
-      <Header
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-      />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-      ) : (
-        <h2>No tasks have been added!</h2>
-      )}
-    </div>
+    <Router>
+      <div className="container">
+        <Header
+          onAdd={() => setShowAddTask(!showAddTask)}
+          showAdd={showAddTask}
+        />
+        {showAddTask && <AddTask onAdd={addTask} />}
+        {tasks.length > 0 ? (
+          <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+        ) : (
+          <h2>No tasks have been added!</h2>
+        )}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
